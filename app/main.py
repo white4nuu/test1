@@ -12,10 +12,10 @@ name = None
 def read_root():
     return {"Hello": name}
 
-if name is None:
-    @app.post("/")
-    def write_name(new_name: str):
-        name = new_name
+@app.post("/")
+def write_name(new_name: str):
+        if name is None:
+            name = new_name
         return {"Hello": name}
     
 @app.put("/")
