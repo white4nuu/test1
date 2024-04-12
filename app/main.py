@@ -14,20 +14,20 @@ def read_root():
 
 if name is None:
     @app.post("/")
-    def write_name(name):
-        name = name
+    def write_name(new_name: str):
+        name = new_name
         return {"Hello": name}
     
 @app.put("/")
-def update_name(name):
-    name = name
+def update_name(new_name: str):
+    name = new_namename
     return {"Hello": name}
 
 
 
 @app.delete("/")
-def delete_name(name):
-    name = name
+def delete_name():
+    name = None
     return {"Hello": name}
 
 
