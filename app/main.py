@@ -15,17 +15,20 @@ def read_root():
 if name is None:
     @app.post("/")
     def write_name(name):
+        name = name
         return {"Hello": name}
     
 @app.put("/")
 def update_name(name):
+    name = name
     return {"Hello": name}
 
 
 
 @app.delete("/")
 def delete_name(name):
-    return {"Hello"}
+    name = name
+    return {"Hello": name}
 
 
 #@app.post("/items/{item_id}")
