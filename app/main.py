@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-name = None
+name = ""
 
 
 @app.get("/")
@@ -14,22 +14,18 @@ def read_root():
 
 @app.post("/")
 def write_name(new_name):
-        global name
         name = new_name
         return {"Hello": name}
     
 @app.put("/")
 def update_name(new_name):
-    global name
     name = new_name
     return {"Hello": name}
 
 
-
 @app.delete("/")
 def delete_name():
-    global name
-    name = None
+    name = ""
     return {"Hello": name}
 
 
